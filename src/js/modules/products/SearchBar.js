@@ -3,10 +3,10 @@
 var React = require('react');
 
 var SearchBar = React.createClass({
-    handleChange: function() {
+    handleChange() {
         this.props.onUserInput(
-            this.refs.filterTextInput.getDOMNode().value,
-            this.refs.inStockOnlyInput.getDOMNode().checked
+            this.filterTextInput.value,
+            this.inStockOnlyInput.checked
         );
     },
     render: function () {
@@ -16,13 +16,13 @@ var SearchBar = React.createClass({
                     type="text"
                     placeholder="Search..."
                     value={this.props.filterText}
-                    ref="filterTextInput"
+                    ref={(input) => this.filterTextInput = input}
                     onChange={this.handleChange} />
                 <p>
                     <input
                         type="checkbox"
                         checked={this.props.inStockOnly}
-                        ref="inStockOnlyInput"
+                        ref={(input) => this.inStockOnlyInput = input}
                         onChange={this.handleChange} />
                     {' '}
                     Only show products in stock

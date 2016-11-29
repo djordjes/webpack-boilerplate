@@ -1,6 +1,8 @@
 "use strict";
 
 var React = require('react');
+var ReactDOM = require('react-dom')
+
 var FilterableProductTable = require('./modules/products/FilterableProductTable');
 
 var PRODUCTS = [
@@ -12,7 +14,7 @@ var PRODUCTS = [
     {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
 ];
 
-React.render(
+ReactDOM.render(
     <FilterableProductTable products={PRODUCTS} />,
     document.getElementById('container')
 );
