@@ -6,7 +6,7 @@
   "scripts": {
     "start": "npm run serve | npm run dev",
     "serve": "./node_modules/.bin/http-server -p 8080",
-    "dev": "webpack-dev-server --progress --colors --port 8090 --hot"
+    "dev": "SET NODE_ENV=development & webpack-dev-server --progress --colors --port 8090 --hot"
   },
   "author": "Djordje",
   "license": "",
