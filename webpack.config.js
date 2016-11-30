@@ -1,9 +1,7 @@
 module.exports = {
-	entry: {
-		reactIndex: './src/js/app.js'
-	},
+	entry: './src/js/app.js',
 	output: {
-		filename: '[name].bundle.js',
+		filename: 'bundle.js',
 		path: './public',
 		publicPath: 'http://localhost:8090/assets'
 	},
