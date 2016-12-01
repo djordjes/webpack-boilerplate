@@ -1,12 +1,22 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { Link } from 'react-router';
 
-import { Router, Route , hashHistory } from 'react-router';
+export default React.createClass({
+	propTypes: {
+		children: React.PropTypes.node
+	},
 
-import Product from './modules/products/container';
+	render() {
+		return (
+			<div>
+				<h1><Link to="/">React boileplate</Link></h1>
+				<ul role="nav">
+					<li><Link to="/about">About</Link></li>
+					<li><Link to="/products">Products</Link></li>
+				</ul>
+				{this.props.children}
+			</div>
+		);
+	}
+});
 
-render((
-	<Router history={hashHistory}>
-		<Route path="/" component={Product}/>
-	</Router>
-), document.getElementById('app'));
