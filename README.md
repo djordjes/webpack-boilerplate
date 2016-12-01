@@ -7,5 +7,3 @@ Webpack/React Boileplate
 - `npm start`
 - open [http://localhost:8080/](http://localhost:8080/)
 
-#### Build for production
-- npm build-prod

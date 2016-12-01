@@ -1,12 +1,11 @@
 {
-  "name": "ReactBoilerplate",
-  "version": "1.0.1",
-  "description": "Sample Webpack APP",
+  "name": "ReactWebpackBoilerplate",
+  "version": "1.0.2",
+  "description": "React Webpack Boilerplate",
   "main": "app.js",
   "scripts": {
-    "start": "npm run serve | npm run dev",
-    "serve": "./node_modules/.bin/http-server -p 8080",
-    "dev": "SET NODE_ENV=development & webpack-dev-server --progress --colors --port 8090 --hot"
+    "start": "npm run dev",
+    "dev": "SET NODE_ENV=development & webpack-dev-server --content-base public/ --progress --colors --port 8080 --hot"
   },
   "author": "Djordje",
   "license": "",
@@ -23,7 +22,6 @@
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
     "cross-env": "^3.1.3",
-    "http-server": "^0.9.0",
     "react-hot-loader": "^1.3.1",
     "redux-devtools": "^3.3.1",
     "webpack": "^1.13.3",
