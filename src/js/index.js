@@ -9,9 +9,7 @@ import Products from './modules/Products/container';
 
 render((
 	<Router>
-
-		<Route>
-			<div>
+		<div>
 			<Route
 				path="/"
 				component={App}
@@ -23,8 +21,7 @@ render((
 			<Route
 				path="/products"
 				component={Products}
-			/></div>
-		</Route>
-
+			/>
+		</div>
 	</Router>
 ), document.getElementById('app'));

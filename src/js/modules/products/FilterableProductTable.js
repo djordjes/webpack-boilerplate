@@ -1,24 +1,27 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import SearchBar from './SearchBar';
 import ProductTable from './ProductTable';
 
-const FilterableProductTable = React.createClass({
+class FilterableProductTable extends React.PureComponent {
 
-	getInitialState: function() {
-		return {
-			filterText: '',
-			inStockOnly: false
-		};
-	},
+	static propTypes = {
+		product: PropTypes.array
+	};
 
-	handleUserInput: function(filterText, inStockOnly) {
+	state = {
+		filterText:  '',
+		inStockOnly: false
+	};
+
+	handleUserInput = (filterText, inStockOnly) => {
 		this.setState({
-			filterText: filterText,
+			filterText:  filterText,
 			inStockOnly: inStockOnly
 		});
-	},
+	};
 
-	render: function() {
+	render() {
 		return (
 			<div>
 				<SearchBar
@@ -34,6 +37,6 @@ const FilterableProductTable = React.createClass({
 			</div>
 		);
 	}
-});
+}
 
 export default FilterableProductTable;

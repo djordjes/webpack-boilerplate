@@ -1,17 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default React.createClass({
-	render: function() {
-		var name = this.props.product.stocked ?
-			this.props.product.name :
+function ProductRow(props) {
+	const name = props.product.stocked ?
+		props.product.name :
+		(
 			<span style={{color: 'red'}}>
-				{this.props.product.name}
-			</span>;
-		return (
-			<tr>
-				<td>{name}</td>
-				<td>{this.props.product.price}</td>
-			</tr>
+				{props.product.name}
+			</span>
 		);
-	}
-});
+
+	return (
+		<tr>
+			<td>{name}</td>
+			<td>{props.product.price}</td>
+		</tr>
+	);
+}
+
+ProductRow.propTypes = {
+	product: PropTypes.shape({
+		name:    PropTypes.string,
+		stocked: PropTypes.bool
+	})
+
+};
+
+export default ProductRow;

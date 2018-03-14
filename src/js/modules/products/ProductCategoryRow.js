@@ -1,9 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const ProductCategoryRow = React.createClass({
-	render: function() {
-		return (<tr><th colSpan="2">{this.props.category}</th></tr>);
-	}
-});
+function ProductCategoryRow(props) {
+	return (
+		<tr>
+			<th colSpan="2">{props.category}</th>
+		</tr>
+	);
+}
+
+ProductCategoryRow.propTypes = {
+	category: PropTypes.string
+};
 
 export default ProductCategoryRow;
