@@ -1,24 +1,9 @@
 const { resolve } = require('path');
-const webpack = require('webpack');
 
 module.exports = {
 	context: resolve(__dirname, 'src'),
 
-	entry: [
-		'react-hot-loader/patch',
-		// activate HMR for React
-
-		'webpack-dev-server/client?http://localhost:8080',
-		// bundle the client for webpack-dev-server
-		// and connect to the provided endpoint
-
-		'webpack/hot/only-dev-server',
-		// bundle the client for hot reloading
-		// only- means to only hot reload for successful updates
-
-		'./js/index.js'
-		// the entry point of our app
-	],
+	entry: ['./js/index.js'],
 	output: {
 		filename: 'bundle.js',
 		// the output bundle
@@ -41,13 +26,5 @@ module.exports = {
 				use: [ 'style-loader', 'css-loader?modules']
 			}
 		]
-	},
-
-	plugins: [
-		new webpack.HotModuleReplacementPlugin(),
-		// enable HMR globally
-
-		new webpack.NamedModulesPlugin()
-		// prints more readable module names in the browser console on HMR updates
-	]
+	}
 };

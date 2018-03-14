@@ -1,8 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import {Link} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
+import About from './modules/About';
+import Products from './modules/Products/container';
+import { hot } from 'react-hot-loader';
 
-function App(props) {
+function App() {
 	return (
 		<div>
 			<h1><Link to="/">React boileplate</Link></h1>
@@ -10,13 +12,16 @@ function App(props) {
 				<li><Link to="/about">About</Link></li>
 				<li><Link to="/products">Products</Link></li>
 			</ul>
-			{props.children}
+			<Route
+				path="/about"
+				component={About}
+			/>
+			<Route
+				path="/products"
+				component={Products}
+			/>
 		</div>
 	);
 }
 
-App.propTypes = {
-	children: PropTypes.node
-};
-
-export default App;
+export default hot(module)(App);

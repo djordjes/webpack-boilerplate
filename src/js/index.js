@@ -1,27 +1,10 @@
 import React from 'react';
-import {render} from 'react-dom';
-
-import {BrowserRouter as Router, Route} from 'react-router-dom';
-
+import ReactDOM from 'react-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
 import App from './App';
-import About from './modules/About';
-import Products from './modules/Products/container';
 
-render((
+ReactDOM.render((
 	<Router>
-		<div>
-			<Route
-				path="/"
-				component={App}
-			/>
-			<Route
-				path="/about"
-				component={About}
-			/>
-			<Route
-				path="/products"
-				component={Products}
-			/>
-		</div>
+		<App />
 	</Router>
 ), document.getElementById('app'));
