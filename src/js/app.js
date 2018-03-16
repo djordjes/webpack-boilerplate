@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, Route} from 'react-router-dom';
 import About from './modules/About';
-import Products from './modules/Products/container';
+import Products from './modules/products/container';
 import { hot } from 'react-hot-loader';
 
 function App() {
