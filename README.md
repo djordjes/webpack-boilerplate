@@ -4,6 +4,13 @@ Webpack/React Boileplate
 ### How to use
 
 - `npm install`
-- `npm start`
-- open [http://localhost:8080/](http://localhost:8080/)
 
+### Run dev server
+- `npm start`
+- open [http://localhost:3000/](http://localhost:3000/)
+
+### build for production
+- `npm run build`
+
+### run tests
+- `npm run test`
